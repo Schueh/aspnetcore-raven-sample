@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  web:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5000:80"
+      
+  db:
+    ports:
+      - "5001:8080"
+    environment:
+      RAVEN_ARGS: --ServerUrl=http://0.0.0.0:8080 --Setup.Mode=None --Security.UnsecuredAccessAllowed=PublicNetwork --License.Eula.Accepted=true

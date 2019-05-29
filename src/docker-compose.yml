@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  web:
+    image: ${DOCKER_REGISTRY-}ravensample
+    build:
+      context: .
+      dockerfile: RavenSample.Web/Dockerfile
+    depends_on:
+      - db
+
+  db:
+    image: "ravendb/ravendb"
+      
