@@ -1,16 +1,15 @@
-﻿using RavenSample.Web;
+﻿using Raven.TestDriver;
+using RavenSample.Web;
 using RavenSample.Web.Pages;
 using Xunit;
 
 namespace RavenSample.Tests
 {
-    public class IndexModelTests : RavenTestBase
+    public class IndexModelTests : RavenTestDriver
     {
         [Fact]
         public void LoadPerson()
         {
-            ConfigureServer();
-
             using (var store = GetDocumentStore())
             {
                 using (var session = store.OpenSession())
